@@ -17,7 +17,7 @@ const Banner = () => {
       </div>
     </div>
     <div className="px-3">
-      <img src={"/assets/nft/sofa_preview.png"} alt="bubble" />
+      <img src={"/photos/oil-painting.png"} alt="bubble" />
     </div>
   </div>
   )

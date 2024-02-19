@@ -34,14 +34,12 @@ const TextureModel: FC<{ name: string, poster: string, texture: string }> = (pro
         <>
             <model-viewer
                 id={name}
-                camera-controls
-                touch-action="pan-y pan-x"
                 ref={modelRef}
                 src={'/glb/frame1.glb'}
-                ar-placement="wall"
-                tone-mapping="commerce"
-                ar
-                ar-modes="webxr quick-look"
+                ar ar-placement="wall" 
+                camera-controls 
+                touch-action="pan-y"
+                ar-modes="webxr"
                 alt={name}>
             </model-viewer>
         </>

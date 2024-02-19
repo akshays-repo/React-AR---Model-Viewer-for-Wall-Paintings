@@ -55,19 +55,19 @@ const LandingPage = () => {
         <div className=" md:flex items-center justify-between max-w-[1180px] w-full">
           <div className="text-start flex flex-col gap-2.5 sm:gap-3 md:gap-5 px-[4%] xl:px-0 md:max-w-[430px] lg:max-w-[518px] w-full ">
             <div className="text-[#2D4263] font-Cormorant text-[25px] sm:text-[40px] md:text-[50px] lg:text-[75px] md:leading-[70px] lg:leading-[87px] font-medium tracking-[0.03em]">
-              Discover{" "}
+            Uncover {" "}
               <span className="text-[#C84B31] underline">
-                Rare AR Collections
+              Exquisite AR Collections 
               </span>{" "}
               in the
-              <span className="text-[#C84B31] underline">World</span>
+              <span className="text-[#C84B31] underline">Worldwide</span>
             </div>
             <div className="text-[#2D4263] text-sm sm:text-xl md:text-sm font-montserrat">
-              Craft your ideal space with us: Where every piece is a masterpiece. Design your dream home today!
+            Elevate your surroundings with us: Where each creation is a work of art. Curate your perfect sanctuary today!
             </div>
           </div>
           <div className="px-3">
-            <img src={"/assets/nft/sofa_preview.png"} alt="bubble" />
+          <img src={"/photos/oil-painting.png"} alt="bubble" />
           </div>
         </div>
       </div>
@@ -97,7 +97,11 @@ const LandingPage = () => {
                             src={data.src}
                             width={'2667'}
                             height={'4000'}
-                            alt="dropmainback"
+                            alt={data.name}
+                            quality={80}
+                              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8f5VBEQAGpgH3dx2RIgAAAABJRU5ErkJggg==
+                              "
+                             placeholder="blur" // Optional blur-up while loading
                             className="rounded-3xl w-full h-full mix-blend-mode: multiply;"
                           />
                           <div className="w-full flex flex-col gap-4 px-[4%]  py-[4%] lg:py-[2%]">
