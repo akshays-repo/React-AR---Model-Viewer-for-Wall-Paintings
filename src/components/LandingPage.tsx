@@ -119,7 +119,7 @@ const LandingPage = () => {
                                   <Link
                                     href={{
                                       pathname: '/3d_view',
-                                      query: { name: data.name, poster: data.src , texture: data.src },
+                                      query: { name: data.name, poster: data.src , texture: data.texture },
                                     }}
                                   >
                                     <Button

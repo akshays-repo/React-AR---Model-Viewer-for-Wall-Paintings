@@ -40,7 +40,9 @@ const TextureModel: FC<{ name: string, poster: string, texture: string }> = (pro
                 camera-controls 
                 touch-action="pan-y"
                 ar-modes="webxr"
+                camera-orbit="-100deg 70deg"
                 alt={name}>
+                    
             </model-viewer>
         </>
     )
