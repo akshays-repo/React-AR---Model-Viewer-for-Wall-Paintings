@@ -1,11 +1,14 @@
 'use client'
-import React, { FC, useEffect, useRef } from 'react'
+import React, { FC, useEffect, useRef, useState } from 'react'
 import '@google/model-viewer/';
 import { ModelViewerElement } from '@google/model-viewer/';
+import OverlayLoading from './OverlayLoading';
 
 const TextureModel: FC<{ name: string, poster: string, texture: string }> = (props) => {
     const modelRef = useRef<ModelViewerElement>();
     const { name, texture, poster } = props;
+
+    const [isLoaded, setIsLoaded] = useState(false)
 
     useEffect(() => {
         const applyTextures = async () => {
@@ -20,6 +23,7 @@ const TextureModel: FC<{ name: string, poster: string, texture: string }> = (pro
                             const material = model.materials[3];
                             const baseColorTexture = material.pbrMetallicRoughness.baseColorTexture;
                             baseColorTexture.setTexture(imageTexture);
+                            setIsLoaded(true)
                         }
                     }
                 }
@@ -32,6 +36,7 @@ const TextureModel: FC<{ name: string, poster: string, texture: string }> = (pro
 
     return (
         <>
+        <OverlayLoading isLoading={!isLoaded} />
             <model-viewer
                 id={name}
                 ref={modelRef}
@@ -41,8 +46,7 @@ const TextureModel: FC<{ name: string, poster: string, texture: string }> = (pro
                 touch-action="pan-y"
                 ar-modes="webxr"
                 camera-orbit="-100deg 70deg"
-                alt={name}>
-                    
+                alt={name}>         
             </model-viewer>
         </>
     )
